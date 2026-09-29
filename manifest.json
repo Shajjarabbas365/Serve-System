@@ -1,8 +1,9 @@
 {
     "name": "ServeSmart",
     "short_name": "ServeSmart",
-    "id": "/",
-    "start_url": "/",
+    "id": "/Serve-System/",
+    "start_url": "/Serve-System/",
+    "scope": "/Serve-System/",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#17483B",
