@@ -1,11 +1,11 @@
 {
-    "name": "servesystem",
-    "short_name": "servesystem",
+    "name": "ServeSmart",
+    "short_name": "ServeSmart",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFFFF",
+    "theme_color": "#17483B",
+    "description": "ServeSmart - restaurant audits, staff training and attendance.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
