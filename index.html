@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/Serve-System/">
 
   <meta charset="UTF-8">
@@ -33,14 +20,24 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
   <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const b = document.createElement('button');
+      b.textContent = 'Install ServeSmart';
+      b.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:99999;padding:12px 18px;background:#16A34A;color:#fff;border:0;border-radius:12px;font:600 15px Arial;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer';
+      b.onclick = async () => {
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        b.remove();
+        deferredPrompt = null;
+      };
+      document.body.appendChild(b);
+    });
+  </script>
 </body>
 </html>
